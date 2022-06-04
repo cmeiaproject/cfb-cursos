@@ -1,0 +1,130 @@
+Aula 8 - Manipulando Datas e Horas
+======
+
+. DATE
+	- é uma	classe que possibilita a manipulação de data e hora no javascript
+	sintaxe:
+				<variavel> = new Date();
+				
+	- também pode receber parametros na sua instanciação, mas não são obrigatorios
+	sintaxe:
+				new Date(<ano>, <mes>, <dia>, <hora>, <minuto>, <segundo>, <milisegundos>);
+				
+	exemplo:
+				let data = new Date(2022, 01, 10);
+				- no parametro do mês, não é passado o mês, mas o indice do vetor do mês.
+				- 0 (Janeiro), 11 (Dezembro)
+				- no exemplo, o mes colocado é Fevereiro (01)
+				
+	. METODOS
+		. GETDATE()
+			- este metodo retorna o dia do mês.
+			sintaxe:
+						<variavel>.getDate();
+						ou
+						Date().getDate();
+		. GETMONTH()				
+			- este metodo retorna o mês.
+			- sendo que ele retorna de 0 (Janeiro) a 11 (Dezembro)
+			sintaxe:
+						<variavel>.getMonth();
+						ou
+						Date().getMonth();
+
+		. GETFULLYEAR()
+			- este metodo retorna o ano.
+			sintaxe:
+						<variavel>.getFullYear();
+						ou
+						Date().getFullYear();
+
+		. GETDAY()				
+			- este metodo retorna o dia da semama.
+			- sendo que ele retorna de 0 (Domingo) a 6 (Sabado)
+			sintaxe:
+						<variavel>.getDay();
+						ou
+						Date().getDay();
+						
+		exemplo:
+					const semana = new Array("Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira" "Quinta-feira", "Sexta-feira", "Sabado");
+					
+					const mes = new Array("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Jumho", "Julho", "Agosto", "Setembro", "Outunro", "Novembro", "Dezembro");
+					
+					let extenso = semana[ Date().getDay() ] + ', ' + Date().getDate() + ' de ' + mes[ Date().getMomth() ] + ' de ' + Date().getFullYear();
+					
+					document.write( extenso );
+					
+		. GETHOURS()			
+			- retorna a hora
+			sintaxe:
+						Date().getHours();
+
+		. GETMINUTES()			
+			- retorna os minutos
+			sintaxe:
+						Date().getMinutes();
+
+		. GETSECONDS()			
+			- retorna os segundos
+			sintaxe:
+						Date().getSeconds();
+						
+*** NOTA
+*** É POSSIVEL SOMAR OS VALORES OBTIDOS PELAS FUNÇÕES QUE RETORNAM A DATA E A HORA, COM NUMEROS
+*** FAZENDO COM QUE RETORNEM IUTRAS DATAS E HORAS
+
+		exemplo:
+					let dia = Date().getDate(); 
+					// retornará o dia atual
+					
+					let dia = Date().getDate() + 3; 
+					// ira somar, e retornará uma data posterior (+3)
+		
+					let hora = Date().getHours();
+					// retornara a hora atual
+					
+					let hora = Date().getHours() + 4;
+					// ira somar, e retornara um hora posterior (+4)
+					
+		. SETDATE(<valor>)
+			- este metodo da classe DATE, altera o dia do mes
+			- recebe um numero
+			sintaxe:
+						Date().setDate(<valor>);
+						
+			exemplo:
+						atual = new Date();
+						posterior = new Date();
+						
+						posterior.setDate( atual.getDate() + 2 );
+						// obtem o dia atual e somado com 2
+						// a variavel posterior tera o valor do dia do mes alterado
+						// estara com o dia do mes avançado, mais dois dia. 
+						
+						posterior.setDate(5);
+						// alterou o dia do mes desta variavel para o dia 5
+						
+		. SETMONTH(<valor>)				
+			- este metodo altera o mês.
+			- recebe valores de 0 (Janeiro) a 11 (Dezembro)
+			sintaxe:
+						<variavel>.setMonth(<valor>);
+						ou
+						Date().setMonth(<valor>);
+						
+			exemplo:
+						<variavel>.setMonth(4);
+						ou
+						Date().setMonth(4);
+						
+						// o mes foi alterado para Maio
+
+		. SETFULLYEAR(<valor>)
+			- este metodo altera o ano.
+			sintaxe:
+						<variavel>.setFullYear(<valor>);
+						ou
+						Date().setFullYear(<valor>);
+
+Proxima aula : Curso de Javascript #29 - Math - Métodos e Constantes matemáticas						

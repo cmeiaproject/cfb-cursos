@@ -1,0 +1,69 @@
+Aula 11 - Intervalo de tempo
+=======
+
+. SETTIMEOUT
+	. é uma função javascript que chama uma outra função para ser executada, de acordo com o tempo estipulado
+	sintaxe:
+				setTimeout(<função>, <tempo>);
+	. esta função chama outra função somente uma vez. Depois de executado, não chama mais.
+	. o tempo é definido em milisegundos
+	exemplo:
+				<script>
+					const box = document.getElementById("div1");
+					function MudaCor()
+					{
+						let r, g, b;
+						r = Math.random() * 255;
+						g = Math.random() * 255;
+						b = Math.random() * 255;				
+						box.style.backgroundColor = "rgb("+r+","+g+","+b+")";		
+					}
+					setTimeout(MudarCor, 3000);
+				</script>	
+				
+. SETINTERVAL
+	. tem as mesmas caracteristicas que a função SETTIMEOUT, com a diferença que, diferente do SETTIMEOUT que é executado somente uma unica vez, o SETINTERVAL sera executado a cada X milisegundos.
+	sintaxe:
+				setInterval(<função>, <tempo>);
+	. esta função chamada outra função varias vezes, a cada X milisegundos
+	. o tempo é definido em milisegundos
+	exemplo:
+				<script>
+					const box = document.getElementById("div1");
+					function MudaCor()
+					{
+						let r, g, b;
+						r = Math.random() * 255;
+						g = Math.random() * 255;
+						b = Math.random() * 255;				
+						box.style.backgroundColor = "rgb("+r+","+g+","+b+")";		
+					}
+					setInterval(MudarCor, 3000);
+				</script>	
+	
+.CLEARINTERVAL	
+	. esta função para a execução do intervalo, iniciado pelo SETINTERVAL.
+	. esta função recebe como parametro a variavel que esta associada ao SETINTERVAL
+	sintaxe:
+				clearInterval(<variavel>);
+	exemplo:
+				<script>
+					const box = document.getElementById("div1");
+					let tmp;
+					function MudaCor()
+					{
+						let r, g, b;
+						r = Math.random() * 255;
+						g = Math.random() * 255;
+						b = Math.random() * 255;				
+						box.style.backgroundColor = "rgb("+r+","+g+","+b+")";		
+					}
+					tmp = setInterval(MudarCor, 3000);
+					
+					function PararIntervalo()
+					{
+						clearInterval(tmp);
+					}
+				</script>	
+	
+proxima aula: Curso de Javascript #39 - requestAnimationFrame	

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<title>Classe Math</title>
+		
+	</head>
+	<body>
+		<h1>Classe Math</h1>
+		<h2>Constantes</h2>
+		<div name="constante" id="constante">
+			teste
+		</div>
+		<h2>Metodos</h2>		
+		<div name="metodo" id="metodo">
+			teste
+		</div>
+
+		<div>
+			<button onclick="minimo();">Minimo</button>
+		</div>
+
+		
+	</body>
+		<script>
+			const metodo = document.getElementById("metodo");
+			const constante = document.getElementById("constante");			
+			const arr = [1, 2, 10, 3, 4, 5];
+			
+			function minimo()
+			{
+				const arr = new Array(100, 3, 29, 7, 18);
+				let v = menor(...arr);
+				let r = media(arr);				
+				document.write('Valor retornado é ' + r);
+			}
+			
+			function menor(v)
+			{
+				return Math.min(v);
+			}
+			
+			function media(v)
+			{
+				let t = v.length;
+				let a = 0;
+				let ret;
+				
+				for(let i = 0; i < v.length; i++ )
+				{
+					a += v[i];
+				}
+				
+				ret = a / t;
+				ret = Math.round(ret);
+				
+				return ret;
+			}
+			
+
+			metodo.innerHTML = "<p>O metodo CEIL arredonda sempre para cima</p>";
+			metodo.innerHTML += "<p>CEIL de 2,4 é " +Math.ceil(2.4)+"</p>";
+			metodo.innerHTML += "<p>O metodo FLOOR arredonda sempre para baixo</p>";
+			metodo.innerHTML += "<p>FLOOR de 2,8 é " +Math.floor(2.8)+"</p>";
+			metodo.innerHTML += "<p>FLOOR de 2,3 é " +Math.floor(2.3)+"</p>";			
+			metodo.innerHTML += "<p>O metodo ROUND arredonda sempre para cima ou baixo, dependendo da casa decimal, se é maior/igual a 5 ou menor</p>";			
+			metodo.innerHTML += "<p>ROUND de 2,8 é " +Math.round(2.8)+"</p>";
+			metodo.innerHTML += "<p>ROUND de 2,3 é " +Math.round(2.3)+"</p>";			
+			metodo.innerHTML += "<p>ROUND de 2,5 é " +Math.round(2.5)+"</p>";						
+			metodo.innerHTML += "<p>O metodo POW TRABALHA COM POTENCIAÇÃO</p>";						
+			metodo.innerHTML += "<p>POW (power) de 2 elevado a 4 é" +Math.pow(2, 4)+"</p>";				
+			
+			metodo.innerHTML += "<p>MIN retorna o menor valor de uma sequencia</p>";							
+			metodo.innerHTML += "<p> O menor valor da sequencia " +arr.join()+ " é <strong>" +Math.min(...arr)+ "</strong></p>";										
+			metodo.innerHTML += "<p> O menor valor da sequencia 1, 15, 7, 8, 0, 20 é <strong>" +Math.min(1, 15, 7, 8, 0, 20)+ "</strong></p>";													
+
+			metodo.innerHTML += "<p>MAX retorna o maior valor de uma sequencia</p>";							
+			metodo.innerHTML += "<p> O maior valor da sequencia 1, 15, 7, 8, 0, 20 é <strong>" +Math.max(1, 15, 7, 8, 0, 20)+ "</strong></p>";										
+
+
+			constante.innerHTML = "<p>PI é " +Math.PI+ "</p>";
+			
+			
+			
+		</script>
+	
+</html>

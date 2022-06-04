@@ -1,0 +1,94 @@
+Aula 2 - Arrays
+======
+
+	. No Javascript, para instanciar uma variavel do tipo array, pode ser feito de 3 maneiras:
+		1. let <variavel> = [];
+		2. let <variavel> = new Array();
+		3. let <variavel> = [<conteudo>, <conteudo>, <conteudo>];
+
+
+.PUSH
+
+	. é um metodo do Array que permite que um elemento seja adicionado no final do array.
+		sintaxe:
+				<variavel>.push(<conteudo>);
+				
+		exempo:
+				let cor = [];
+				cor.push("branco");	
+				cor.push("azul");	
+				cor.push("verde");	
+				
+				(o conteudo da variavel cor é ["branco", "azul", "verde"] nesta mesma ordem)
+
+.UNSHIFT
+
+	. é um metodo do Array que permite que um elemento seja adicionado no inicio do array.
+		sintaxe:
+				<variavel>.unshift(<conteudo>);
+				
+		exempo:
+				let cor = [];
+				cor.push("branco");	
+				cor.push("azul");	
+				cor.unshift("verde");	
+
+				(o conteudo da variavel cor é ["verde", "branco", "azul"] nesta mesma ordem)
+
+.POP
+
+	. é um metodo do Array que remove o ultimo elemento do array.
+	. não recebe parametros
+		sintaxe:
+				<variavel>.pop();
+				
+		exemplo:		
+				let cor = [];
+				cor.push("branco");	
+				cor.push("azul");	
+				cor.push("verde");	
+				
+				cot.pop();
+				
+				(o conteudo da variavel cor é ["branco", "azul"] nesta mesma ordem)
+				
+	
+.SHIFT
+
+	. é um metodo do Array que remove o primeiro elemento do array.
+	. não recebe parametros	
+		sintaxe:
+				<variavel>.shift();
+	
+		exemplo:		
+				let cor = [];
+				cor.push("branco");	
+				cor.push("azul");	
+				cor.push("verde");	
+				
+				cot.shift();
+	
+				(o conteudo da variavel cor é ["azul", "verde"] nesta mesma ordem)	
+				
+				
+.SPLICE
+				
+	. é um metodo do Array que remove um ou mais elementos do array.
+	. identificando a posição de onde começará a remoção e a quantidade que quer remover.
+		sintaxe:
+				<variavel>.splice(<posicao>, <quantidade>);
+	
+		exemplo:		
+				let cor = [];
+				cor.push("branco");	
+				cor.push("azul");	
+				cor.push("verde");	
+				cor.push("vermelho");	
+				cor.push("amarelo");	
+				cor.push("preto");					
+				cor.push("marrom");					
+				
+				cot.splice(2, 3);
+	
+				(o conteudo da variavel cor é ["branco", "azul", "preto", "marrom"] nesta mesma ordem)	
+	

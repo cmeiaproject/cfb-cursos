@@ -1,0 +1,21 @@
+Aula 1 - JavaScript inicio
+==========================
+
+.WRITE
+	- é um método que pertence a API DOM.
+	- sua função é escrever (exibir) na página html, o conteudo que foi passado.
+	- ele faz com que o conteudo exibido, seja como uma string.
+		ex.:
+			document.write("50"); // exibira 50 na página
+			document.write("50" + 100); // exibirá 50100 na página.
+				- quando é identificado que no parametro de entrada do método, há uma string
+				- o operador '+' se comporta como um concatenador.
+			document.write(50 + 100); // exibe 150 na página.
+				- neste caso, foi identificado somente numeros, por isso, o operador '+' ira se comportar como soma.
+				
+	- aceita tags html no conteudo
+		ex.:
+			document.write("<h1>Titulo</h1>");
+			- será exibido o texto na página, usando a tag <h1>;
+				
+proxima aula: Curso de Javascript #11 - Blocos de comandos { }

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<title>Desafio KeyDown</title>
+	</head>
+	<style>
+		#box
+		{
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			border: 1px solid black;
+		}
+	</style>
+	
+	<script>
+	
+		let box;
+		let posX = 0;
+		let posY = 0;
+		let dirX = 0;
+		let dirY = 0;		
+		let ativo = 'N';
+		let tmr;
+		let velocidade = 10;
+		let maxY;
+		let maxX;
+		let boxWidth = 200;
+		let boxHeight = 200;		
+	
+		function executarFrame()
+		{
+			posX += (dirX * velocidade);
+			posY += (dirY * velocidade);			
+			
+			if (posX < 0) 
+			{
+				posX = 0;
+			}
+			else if (posX + boxWidth >= maxX) 	
+			{
+				posX = (maxX - boxWidth) - 2;			
+			}
+			
+			if (posY < 0) 
+			{
+				posY = 0;			
+			}
+			else if (posY + boxHeight >= maxY)	
+			{
+				posY = (maxY - boxHeight) - 2;
+			}
+			
+			console.log('maxX:' +maxX+ ' maxY:' +maxY);						
+			console.log('dirX:' +dirX+ ' dirY:' +dirY);			
+			console.log('velocidade:' +velocidade);						
+			console.log('X:' +posX+ ' Y:' +posY);			
+			
+			box.style.top = posY + 'px';
+			box.style.left = posX + 'px';			
+		}
+	
+		function evtKeyDown(e)
+		{
+			switch(e.keyCode)
+			{
+				case 37:
+						dirX = -1;
+						break;
+				case 38: 
+						dirY = -1;				
+						break;				
+				case 39: 
+						dirX = 1;
+						break;
+				case 40: 
+						dirY = 1;								
+						break;				
+			}
+		}
+		
+		function evtKeyUp(e)
+		{
+			dirX = 0;
+			dirY = 0;								
+		}
+		
+	
+		function AtivarKeyDown()
+		{
+			if( ativo == 'N' )
+			{
+				ativo = 'S';
+				maxX = window.innerWidth;
+				maxY = window.innerHeight;				
+				box.style.backgroundColor = "red";
+				
+				document.addEventListener("keydown", evtKeyDown);					
+				document.addEventListener("keyup", evtKeyUp);
+				tmr = setInterval(executarFrame, 20);
+			}
+			else
+			{
+				ativo = 'N';			
+				box.style.backgroundColor = "white";				
+				document.removeEventListener('keydown', evtKeyDown);
+				document.removeEventListener("keyup", evtKeyUp);				
+				
+				clearInterval(tmr);
+				alert('retirado evento keydown');				
+			}
+			
+		}
+	
+	
+		function addEventos()
+		{
+			box = document.getElementById("box");
+			
+			box.addEventListener('click', AtivarKeyDown);
+		}
+	
+		window.addEventListener("load", addEventos);
+	
+	</script>	
+	
+	<body>
+		<div id="box" name="box">
+		</div>
+	</body>
+</html>

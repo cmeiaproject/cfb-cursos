@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<title>Desafio KeyDown</title>
+	</head>
+	<style>
+		#box
+		{
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			border: 1px solid black;
+		}
+	</style>
+	
+	<script>
+	
+		let box;
+		let posX = 0;
+		let posY = 0;
+		let ativo = 'N';
+	
+		function MudarPosicao(e)
+		{
+		
+			switch(e.keyCode)
+			{
+				case 37:
+						posX += -10;
+						break;
+				case 38: 
+						posY += -10;				
+						break;				
+				case 39: 
+						posX += 10;
+						break;
+				case 40: 
+						posY += 10;								
+						break;				
+			}
+			
+			console.log('X:' +posX+ ' Y:' +posY);
+			
+			if (posX < 0) posX = 0;
+			if (posY < 0) posY = 0;			
+			
+			box.style.top = posY + 'px';
+			box.style.left = posX + 'px';			
+
+		}
+	
+		function AtivarKeyDown()
+		{
+			if( ativo == 'N' )
+			{
+				ativo = 'S';
+				box.style.backgroundColor = "red";
+				
+				document.addEventListener("keydown", MudarPosicao);					
+				
+			}
+			else
+			{
+				ativo = 'N';			
+				box.style.backgroundColor = "white";				
+				document.removeEventListener('keydown', MudarPosicao);
+				
+				alert('retirado evento keydown');				
+			}
+			
+		}
+	
+	
+		function addEventos()
+		{
+			box = document.getElementById("box");
+			
+			box.addEventListener('click', AtivarKeyDown);
+		}
+	
+		window.addEventListener("load", addEventos);
+	
+	</script>	
+	
+	<body>
+		<div id="box" name="box">
+		</div>
+	</body>
+</html>

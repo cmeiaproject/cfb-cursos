@@ -1,0 +1,69 @@
+Aula 16 - Manipulação de String - Replace, CharAt, CharCodeAt, FromCharCode e Concat
+=======
+
+. REPLACE
+	
+	. esta funcão tem a mesma funcionalidade que o MATCH.
+	. a diferença é que, substitui o valor encontrado por outro valor.
+	. os modificadores identificados no MATCH, são usados no REPLACE
+	. os metacarateres identificados no MATCH, são usados no REPLACE	
+	sintaxe:
+				replace(<ocorrencia>, <novo_valor>);
+				
+	exemplo:
+				let a = 'Cada porão um novo encontro, mas em cada porão como será este encontro';
+				let res = a.replace(/cada/ig, 'novo');
+				document.write(res);	// todas as ocorrências da palavra 'cada' será substituida por 'novo'. Não importa se esteja em maiusculo ou minusculo
+		
+		
+. CHARAT
+
+	. esta função traz o caracter que se encontra na posição que foi informada.
+	sintaxe:
+				charAt(<posicao>);
+				
+	exemplo:
+				let a = 'Cada porão um novo encontro, mas em cada porão como será este encontro';
+				let res = a.charAt(7);
+				document.write(res);	// retorna a letra 'o' que esta na posição 7
+				
+				
+. CHARCODEAT
+
+	. esta função traz o código do caracter que se encontra na posição que foi informada.
+	sintaxe:
+				charCodeAt(<posicao>);
+				
+	exemplo:
+				let a = 'Cada porão um novo encontro, mas em cada porão como será este encontro';
+				let res = a.charCodeAt(7);
+				document.write(res);	// retorna o código ASCII da letra 'o' que esta na posição 7
+				
+				
+. FROMCHARCODE
+
+	. esta função traz o caracter relacionado código ASC informado.
+	. pertence a classe String
+	sintaxe:
+				String.fromCharCode(<codigo ASC>);
+				
+	exemplo:
+				let res = String.fromCharCode(65);
+				document.write(res);	// retorna o caracter relacionado ai código ASCII informado
+				
+				
+. CONCAT
+
+	. esta função concatena uma string a outra.
+	sintaxe:
+				<variavel>.concat(<conteudo>);
+				
+	exemplo:
+				let a = 'Palmeiras é ';
+				let b = 'Campeão';
+				let res = a.concat(b);
+				
+				document.write(res); // o resulta é Plameiras é Campeão
+				
+				
+Proxima aula: Curso de Javascript #48 - Métodos para manipulação de string P3				

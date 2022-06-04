@@ -1,0 +1,129 @@
+Aula 14 - Manipulando String - Match
+=======
+
+. MATCH
+
+	. é uma função que pesquisa o texto, em busca do valor desejado.
+	. esta função recebe como parametro o valor que sera buscado.
+	. esta função retorna o valor, caso encontre, senão retorna null.
+	. por padrão, é CASE-SENSITIVE
+	. por padrão, as ocorrências são armazenadas em forma de Array.
+	sintaxe:
+				match(<valor>);
+				
+	. MODIFICADORES
+		- os valores abaixo, fazem com que a busca seja alterada:
+			- quando usado os modificadores, trocar as aspas (') por barra (/)
+			
+			. i, faz com que a busca não faça distinção entre maiuscula e minuscula.
+			sintaxe:
+				match(/<valor>/i);
+				
+			. g, busca todas as ocorrências do valor buscado, que possa existir na string
+			sintaxe:			
+				match(/<valor>/g);			
+				
+			. m, faz com que as ocorrências não sejam armazenados como array, mas como string;
+				
+			
+	exemplo:
+				1.	let a = 'beleza ao todo!';
+				2.	let res = a.match('ao'); 
+				3.	document.write(res);  // retorna 'ao'; 
+				4.	let res = a.match('tudo'); 				
+				5.	document.write(res);  // retorna null; 				
+				6. 	let b = document.getElementById('dvBarra').innerHTML;
+				7.	let res = b.match('ao'); 
+				8.	document.write(res);
+
+	. além de retorna o conteudo achado, é possivel fazer com que traga a quantidade de ocorrências do valor buscado, na string onde esta fazendo a busca.			
+	exemplo:
+				1.	let a = 'beleza ao todo! Ao todo são iguais';
+				2.	let res = a.match('ao'); 
+				3.	document.write(res.lenght);  // retorna 1; 
+
+				4.	let res = a.match(/ao/ig); 				
+				5.	document.write(res.lenght);  // retorna 2, pois não faz diferença entre maisculo e minusculo; 				
+
+	. obtendo o resultado em forma de array
+	exemplo:
+
+				1.	let res = a.match(/ao/g); 				
+				2.	document.write(res);  		 // retorna 'ao, Ao', pois não faz diferença entre maisculo e minusculo; 				
+				3.	document.write(res[0]);		 // retorna 'ao'
+				4.	document.write(res[1]);		 // retorna 'Ao'
+				
+				
+. BUSCANDO SOMENTE UM CARACTER
+	exemplo:			
+				1.	let res = a.match(/o/g); 								
+				2.	document.write(res);  		 // ira retornar todas as ocorrências da letra 'o', pois não faz diferença entre maisculo e minusculo; 								
+
+
+
+. BUSCANDO CARACTERES VARIADOS
+
+	. a função permite fazer uma busca onde encontre caracteres variados, quer dizer, ira buscar dentro da string, os caracteres de forma indiviaul.
+	. retornando as ocorrencias de cada um dos itens identificados para a busca.	
+	. é necessário utilizar colchetes '[]'
+	exemplo1:
+				1.	let res = a.match(/[oa]/g); 								
+				2.	document.write(res);  		 // ira retornar todas as ocorrências da letra 'o' ou da letra 'a', pois não faz diferença entre maisculo e minusculo; 												
+
+	. para fazer com que a função não considere o item na busca, deve ser colocado o (^) antes do item		
+	exemplo2:
+			
+				1.	let res = a.match(/[^o]/g); 								
+				2.	document.write(res);  		 // ira retornar todas as ocorrências que não sejam a letra 'o', não fazendo diferença entre maisculo e minusculo; 												
+				3.	let res = a.match(/[^oa]/g); 								
+				4.	document.write(res);  		 // ira retornar todas as ocorrências que não sejam a letra 'o', nem a letra 'a', não fazendo diferença entre maisculo e minusculo; 												
+				
+	. para identificar na função que deseja somente valores que estejamdentro de uma determinada sequencia, deve ser feita da seguinte maneira:
+	exemplo:
+				'A-Z' 
+				// a função entenderá que deve busca ocorrências que tenham caracteres que vão de 'A' a 'Z'
+				
+				'B-F' 
+				// a função entenderá que deve busca ocorrências que tenham caracteres que vão de 'B' a 'F'
+
+				'0-9' 
+				// a função entenderá que deve busca ocorrências que tenham caracteres que vão de '0' a '9'
+				
+	exemplo2:
+				1.	let res = a.match(/[A-H]/g); 								
+				2.	document.write(res);  		 // ira retornar todas as ocorrências que sejam da letra 'a' até a letra 'h', não fazendo diferença entre maisculo e minusculo; 												
+				3.	let res = a.match(/[^0-7]/g); 								
+				4.	document.write(res);  		 // ira retornar todas as ocorrências que não sejam do numero 0 até 7
+				
+				
+. BUSCA USANDO METACARACTER
+
+	. os metacaracteres, são usados para identificar tipos de caracteres.
+	. a vantagem de utiliza-los, é que estes já identificam na busca o que buscar, por exemplo:
+		- realizar uma busca só de numeros
+		- realizar uma busca onde descarte numeros
+	. os metacaracteres, não são colocados entre colchetes '[]'		
+		
+	. estes são os metacaracteres:
+		. \d, faz com que busque somente numeros
+		. \D, faz com que NÃO busque numeros		
+		. \s, busca somente espaços
+		. \S, NÃO considera os espaços na pesquisa 
+		. \n, busca por quebras de linha
+		. \r, busca por ENTER
+		. \t, busca por tabulações (TAB)
+		. \w, busca somente por numeros e letras (ignora espaços, traços e outros)
+		. \W, na pesquisa, NÃO considera letras nem numeros
+		. \O, busca somente por caracteres nulos
+		. \v, busca somente por caracteres de tabulação vertical
+		. \b, busca por ocorrências que comecem ou terminem com letra ou numero. Caso encontre uma ocorrência que comece e termine com letra ou numero, conta como 2 (quer dizer, vale como duas ocorrencias)
+		. \B, busca por ocorrências que NÃO comecem ou terminem com letra ou numero.
+		. s+, busca por palavras que tenha pelo menos uma letra 's'
+		
+	exemplo:
+				let a = 'Caso haja pelo menos dois, talvez haja mais. Então noa 10';
+				let res = a.match(/\d/g);
+				document.write(res); 		// ira retornar 1 e 0
+				
+				let res = a.match(/\D/g);
+				document.write(res); 		// não ira retornar 1 e 0

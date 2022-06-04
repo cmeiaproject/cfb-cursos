@@ -1,0 +1,124 @@
+Aula 3 - Arrays
+======
+
+.INDEXOF
+
+	. é um metodo do Array que retorna a posição de um elemento no array.
+		sintaxe:
+				<variavel>.indexOf(<valor>);
+				
+		exemplo:
+				let indice;
+				let cor = [];
+				
+				cor.push("branco");	
+				cor.push("azul");	
+				cor.push("verde");	
+				
+				indice = cor.indexOf("azul"); //retornará a posição 1
+				indice = cor.indexOf("preto");	// retornará -1, pois não existe no array			
+				
+
+.SORT
+	. é um metodo do Array que ordena na ordem crescente, todos os elementos existentes do array.
+		sintaxe:
+				<variavel>.sort();
+				
+		exemplo:
+				let indice;
+				let cor = [];
+				
+				cor.push("branco");	
+				cor.push("azul");	
+				cor.puch("verde");	
+				cor.puch("preto");					
+				cor.puch("vermelho");									
+				
+				cor.sort();
+
+				(o conteudo da variavel cor é ["azul", "branco", "preto", "verde", "vermelho"] nesta mesma ordem)
+				
+
+
+
+.REVERSE
+	. é um metodo do Array que ordena reversamente, todos os elementos existentes do array.
+	. este metodo não ordena na ordem decrescente, mas pega os ultimos elementos do array e coloca no topo, e os que estavam no topo coloca nas ultimas posições.
+		sintaxe:
+				<variavel>.reverse();
+				
+		exemplo:
+				let indice;
+				let cor = [];
+				
+				cor.push("branco");	
+				cor.push("azul");	
+				cor.puch("verde");	
+				cor.puch("preto");					
+				cor.puch("vermelho");									
+				
+				cor.reverse();
+
+				(o conteudo da variavel cor é ["vermelho", "preto", "verde", "azul", "branco"] nesta mesma ordem)
+
+.JOIN
+	. é um metodo do Array que junta todos os elementos de um array e retorna em forma de string, separado por virgula.
+		sintaxe:
+				<variavel>.join();
+				
+		exemplo:
+				let cores;
+				let cor = [];
+
+				cor.push("branco");	
+				cor.push("azul");	
+				cor.puch("verde");	
+				cor.puch("preto");					
+				cor.puch("vermelho");									
+				
+				cores = cor.join(); 
+				// ira retornar os elementos em formato de string
+				// resultado : branco, azul, verde, preto, vermelho
+				// este sera o conteudo da variavel cores
+
+.CONCAT
+	. é um metodo do Array que permite concatenar arrays.
+	sintaxe:
+			<variavel>.concat(<array>);
+			
+	exemplo:			
+				let cores;
+				let cor = [];
+				let cor_primaria = [];
+				let cor_secundaria = [];
+
+				cor_primaria.push("azul");	
+				cor_primaria.push("amarelo");					
+				cor_primaria.push("vermelho");									
+
+				cor_secundaria.push("verde");	
+				cor_secundaria.push("bege");					
+				cor_secundaria.push("branco");									
+
+				cor = cor_primaria.concat(cor_secundaria);
+
+				// a variavel [cor] contém todos os itens das variaveis [cor_primaria] e [cor_secundaria]
+
+				(o conteudo da variavel cor é ["azul", "amarelo", "vermelho", "verde", "bege", "branco"] nesta mesma ordem)
+
+
+.LENGTH
+	. para saber a quantidade de itens de um array, é usado o metodo LENGTH
+	sintaxe:
+			<variavel>.length;
+			
+	exemplo:
+				let i;
+				let cores = [];
+				
+				cores.push("azul");
+				i = cor.length; // retorna 1
+				
+				cores.push("verde");
+				cores.push("vermelho");		
+				i = cor.length; // retorna 3				

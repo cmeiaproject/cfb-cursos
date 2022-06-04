@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<title>Intervalo de Tempo</title>
+	</head>
+	<style>
+		#box, #box1
+		{
+			width: 200px;
+			height: 200px;
+			border: 1px solid black;
+		}
+	</style>
+	<script>
+		let btnParar;
+		let btnIniciar;
+		let tmp;
+		let box;
+
+		function MudarCor()
+		{
+			let r, g, b;
+			r = Math.random() * 255;
+			g = Math.random() * 255;
+			b = Math.random() * 255;				
+			box1.style.backgroundColor = "rgb("+r+","+g+","+b+")";		
+		}
+		
+		function Iniciar()
+		{	
+			//tmp = setInterval(MudarCor, 300);
+			tmp = setInterval(function()
+							  {
+								let r, g, b;
+								r = Math.random() * 255;
+								g = Math.random() * 255;
+								b = Math.random() * 255;				
+								box.style.backgroundColor = "rgb("+r+","+g+","+b+")";		
+							  }, 500);
+		}
+
+		function Parar()
+		{	
+			clearInterval(tmp);
+		}
+		
+		function addEventos()
+		{
+			box = document.getElementById("box");
+			btnParar = document.getElementById("btnParar");
+			btnIniciar = document.getElementById("btnIniciar");			
+			
+			btnParar.addEventListener("click", Parar);
+			btnIniciar.addEventListener("click", Iniciar);			
+			
+			setTimeout(MudarCor, 3000);
+		}
+		
+		window.addEventListener("load", addEventos);
+		
+		
+	</script>
+	<body>
+		<div id="box" name="box">
+		</div>
+		<button id="btnIniciar">Iniciar</button>
+		<button id="btnParar">Parar</button>		
+		<div id="box1" name="box1">
+		</div>
+	</body>
+</html>

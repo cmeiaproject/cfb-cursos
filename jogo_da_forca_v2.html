@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8>"/>
+		<title>Jogo da Forca v.2</title>
+		<script src="./js/scriptJSv2.js"></script>
+		<style>
+
+			div
+			{
+				text-align: center;
+				margin-top: 15px;
+			}
+			
+			h1
+			{
+				text-align: center;			
+				margin: auto;
+			}
+			
+			h2
+			{
+				margin-top: 5px;
+			}
+			
+			p
+			{
+				margin-top: 10px;
+			}
+			
+			#head
+			{
+				margin-bottom: 15px;
+			}
+			
+			#main
+			{
+				height: 200px;
+				//background-image: linear-gradient(to top, green, yellow);
+				border: 1px solid black;
+				width: 400px;
+				margin: auto;
+			}
+			
+			#iniciar
+			{
+				margin-bottom: 20px;
+			}
+			
+			#texto
+			{
+				width: 500px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1>Jogo da Forca v.2</h1>
+		<div id="head">
+			<button id="btnIniciar">Iniciar</button>
+			<div id="iniciar">
+				<label for="letra">Letra</label>
+				<input type="text" id="letra" />
+				<button id="btnNovaLetra" disabled>Letra</button>
+			</div>	
+			<div>
+				<label for="texto">Texto</label>
+				<textarea type="text" id="texto" rows="6">teste de textarea</textarea>
+			</div>
+		</div>	
+		
+		<div id="main">
+			<h1 id="mensagem"></h1>
+		</div>
+		<div id="resultadoFinal">
+			<h2>Palavra</h2>
+			<p id="acertos"></p>
+			<h2>Erros</h2>		
+			<p id="erros"></p>		
+			<h2>Resultado</h2>			
+			<p id="resultado"></p>
+		</div>	
+	</body>
+</html>

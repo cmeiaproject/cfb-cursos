@@ -1,0 +1,52 @@
+Aula 13 - Manipulação de Atributos
+=======
+
+. SETATTRIBUTE
+	
+		. este método permite adicionar atributos em elementos html.
+		. não esta limitado a adicionar atributos já recobecidos pelo html/javascript, mas permite criar atributos criado pelo usuario
+		sintaxe:
+					setAttribute(<nome_do_atributo>, <valor>);
+		exemplo:
+					1.	let a = document.getElementById('barra');
+					2.	a.setAttribute('class', 'borda');
+					3.	a.setAttribute('contador', '1');
+					
+					// na linha 2 é adicionado o atributo [CLASS] (primeiro parametro), que é usado para identificar
+					// uma classe css.
+					// depois é passado qual o segundo parametro, que é o valor. Que neste caso é a classe a ser usada.
+					// na linha 3 é adicionado o atributo [CONTADOR], neste caso, atributo é um atributo definido pelo usuario
+					// quer dizer, não é um atributo ja existente (como o CLASS), mas um atributo que foi criado pelo usuario.
+					// Mesmo assim, será reconhecido pelo javascript;
+		
+		
+. REMOVEATTRIBUTE		
+
+		. este método remove o atributo do elementos html.
+		sintaxe:
+					removeAttribute(<nome_do_atributo>);
+
+		exemplo:
+					1.	let a = document.getElementById('barra');
+					2.	a.removeAttribute('class');
+					3.	a.removeAttribute('contador');
+
+		
+. HASATTRIBUTE
+
+		. este método verifica se o elemento html possui atributo requisitado.
+		. retorna true ou false.
+		sintaxe:
+					hasAttribute(<nome_do_atributo>);
+
+		exemplo:
+					1.	let a = document.getElementById('barra');
+					2.	if( a.hasAttribute('class') )
+					3.	{
+					4.		alert('Possui o atributo');
+					5.	}	
+					6.	else
+					7.	{
+					8.		alert('Não possui o atributo');
+					9.	}	
+

@@ -1,0 +1,33 @@
+Aula 7 - Fomularios
+======
+
+. FORMS
+	. no JavaScript o metodo forms, retorna dados somente do formulario.
+	. ele não retorna os elementos contidos no formulario
+	. este metodo retorna um array
+	sintaxe:
+				const <variavel> = document.forms;
+	exemplo:	
+				const formularios = document.forms;
+				
+	ATRIBUTOS
+		. LENGTH
+			- por ser um array, ele possui o atributo length, que retorna a quenatidade de formularios na pagina
+			sintaxe:
+						document.forms.length;
+		. NAMEDITEM
+			- este metodo, aponta para o formulario utilizando o name dele.
+			- ira retornar as unformações do formulario requisitado
+			sintaxe:
+						document.forms.namedItem("<name do formulario>");
+		. ELEMENTS
+			- este atributo permite que os elementos que estão dentro do formulario sejam acessiveis.
+			- retorna um array de elementos
+			sintaxe:
+						const elemento = document.forms[<indice>].elements;
+						const elemento = document.forms["<name do formulario>"].elements;
+						const elemento = document.forms.namedItem("<name do formulario>").elements;
+						
+*** NOTA
+*** O ATRIBUTO ELEMENTS IRA TRAZER SOMENTE OS ELEMENTOS QUE SÃO USADOS COMO INPUT DE DADOS
+		

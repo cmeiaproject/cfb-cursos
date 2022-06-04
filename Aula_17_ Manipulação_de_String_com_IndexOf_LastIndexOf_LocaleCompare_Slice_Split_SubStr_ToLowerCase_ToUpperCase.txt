@@ -1,0 +1,130 @@
+Aula 17 - Manipulação de String - IndexOf, LastIndexOf, LocaleCompare, Slice, Split, SubStr, ToLowerCase, ToUpperCase
+=======
+
+. INDEXOF
+
+	. é uma função que retorna a posição do primeiro caracter encontrado, dentro de uma string.
+	. é case-sensitive
+	. se não encontrar o caracter, retorna -1. 
+	sintaxe:
+				<variavel>.indexOf(<valor>);
+	exemplo:
+				let a = "Escola Abraços";
+				let b = a.indexOf("A");
+				let c = a.indexOf("a");				
+				
+				// foi atribuito a variavel b, a posição 8
+				// foi atribuito a variavel c, a posição 5				
+				
+				
+. LASTINDEXOF				
+
+	. é uma função que retorna a posição do ultimo caracter encontrado, dentro de uma string.
+	. é case-sensitive
+	. se não encontrar o caracter, retorna -1. 
+	sintaxe:
+				<variavel>.lastIndexOf(<valor>);
+				
+	exemplo:
+				let a = "Escola Abraços";
+				let b = a.indexOf("s");
+				
+				// foi atribuito a variavel b, a posição 14
+				
+				
+. LOCALECOMPARE
+
+	. é uma função que compara duas strings
+	. retorna os seuintes valores:
+		. 0, se as strings foram iguais
+		. 1, se as strings forem diferentes
+		
+	sintaxe:
+				<variavel>.localeCompare(<valor>);
+	exemplo:
+				let a = 'Escola Abraços';
+				let b = 'Escola abraços';
+				
+				let c = a.localeCompare(b);
+				if( c == 0 )
+				{
+					document.write('são identicas');
+				}
+				else
+				{
+					document.write('são diferentes');				
+				}
+	
+. SLICE
+
+	. é uma função que retorna uma parte especifica do conteudo de uma string.
+	. recebe a posição de onde inicia a busca, e vai até a posição de onde termina a busca, terminado retorna o resultado encontrado pela busca
+	. recebe como parametros:
+		. a posição inicial
+		. a posição final
+	sintaxe:
+				<variavel>.slice(<posicao_inicial>, <posição_final>);
+				
+	exemplo:
+				let a = 'Escola Abraços';
+				let b = a.slice(3, 9);
+				
+				document.write(b); // retornará - ola Abr
+				
+. SPLIT				
+
+	. é uma função onde recortar o conteudo de uma string em varias partes.
+	. o recorte é feito quando encontrado o delimitador (divisor) especificado.
+	. retorna o conteudo do recorte em um array
+	sintaxe:
+				<variavel>.split(<valor>);
+	exemplo:
+				let a = 'Escola Abraços';
+				let b = a.split(' ');
+
+				document.write(b[0]); // Escola
+				document.write(b[1]); // Abraços
+
+				
+. SUBSTR
+
+	. é semelhante ao SLICE
+	. esta função, retorna um trecho do conteudo existente de uma string.
+	. parametros recebidos:
+		- posição inicial da busca
+		- tamanho da string a ser buscado
+	sintaxe:
+				<variavel>.substr(<posicao_inicial>, <tamanho_buscado>);
+	
+	exemplo:
+				let a = 'Escola Abraços';
+				let b = a.substr(3, 3);
+
+				document.write(b); // ola
+				
+				
+. TOLOWERCASE
+
+	. é uma função que converte o conteudo de uma string em minusculo
+	sintaxe:
+				<variavel>.toLowerCase();
+				
+	exemplo:
+				let a = 'Escola Abraços';
+				let b = a.toLowerCase();
+
+				document.write(b); // escola abraços
+				
+				
+. TOUPPERCASE
+
+	. é uma função que converte o conteudo de uma string em maiusculo
+	sintaxe:
+				<variavel>.toUpperCase();
+				
+	exemplo:
+				let a = 'Escola Abraços';
+				let b = a.toUpperCase();
+
+				document.write(b); // ESCOLA ABRAÇOS
+				

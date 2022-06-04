@@ -1,0 +1,28 @@
+Aula 15 - Manipulando String - Search
+=======
+
+. SEARCH
+
+	. é uma função que pesquisa o texto, em busca do valor desejado.
+	. esta função recebe como parametro o valor que sera buscado.
+	. retorna a posição da ocorrência, quando encontrada. E, caso tenha mais ocorrências, ira somente retorna a primeira encontrada
+	. por padrão, é CASE-SENSITIVE
+	sintaxe:
+				search(<valor>);
+				
+	. MODIFICADORES
+		- os valores abaixo, fazem com que a busca seja alterada:
+			- quando usado os modificadores, trocar as aspas (') por barra (/)
+			
+			. i, faz com que a busca não faça distinção entre maiuscula e minuscula.
+			sintaxe:
+						search(/<valor>/i);
+				
+	exemplo:				
+				let a = 'Cada passo uma vitória. Cada um sabe o que quer';
+				let res = a.seacrh('cada');
+				document.write(res);			// não ira retornar a posição da palavra 'cada'
+				
+				let res = a.seacrh(/cada/i);
+				document.write(res);			// retorna a posição da palavra 'cada'
+				

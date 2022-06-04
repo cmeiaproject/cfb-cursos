@@ -1,0 +1,95 @@
+Aula 5 - Tratamento de exceções
+======
+
+. TRY, CATCH
+
+	. instrução usada para tratamento de erros
+	. a condição CATCH recebe uma variavel, onde sera atribuida a ela a excessão, caso isso ocorra. Esta variavel sera do tipo EXCEPTION
+	. sintaxe:
+				try
+				{
+					<instruções>
+				}
+				catch(<variavel_catch>)
+				{
+					<instruções>
+				}
+	. ATRIBUTOS
+		. MESSAGE
+			. um atributo que pertence ao tipo exception, que retorna o erro provocado 
+			sintaxe:
+						<variavel_catch>.message;
+			
+	. exemplo:
+				try
+				{
+					document.writo("1"); // o metodo "writo" não existe
+				}
+				catch(e)
+				{
+					console.log(e.message);
+				}
+				
+	. o javascript, possui tratamento internos de erros, caso aconteçam.
+	. exemplo:
+				try
+				{
+					num = 10 / 0;
+					document.write("O resultado é: " + num); 
+					// o javascript ira executar esta condição, com a diferença que, o resultado da variavel NUM será a mensagem de erro. 
+				}
+				catch(e)
+				{
+					document.write("Erro ma divisão"); // esta condição não sera executada				
+				}
+				
+				- neste exemplo, o javascript não executou a condição dentro do CATCH, e sim o que esta no TRY. 
+				- pois caiu em uma condição de tratamento interno, e por ja ser tratado ele não executa o CATCH, mas já traz o resultado do erro.
+				
+. THROW				
+	. esta instrução força o disparo de uma exceção
+	. sintaxe:
+				throw <erro>;
+	. exemplo:
+				try
+				{
+					...
+					throw new Error("erro forçado");
+				}
+				catch(e)
+				{
+				}
+				
+				- o exemplo acima, mostra a instrução THROW executando um disparo para a exceção.
+				- é criado uma instancia do tipo ERROR (new Error), indicando para o processamento que um erro foi "detecado", fazendo com que o fluxo passe para o CATCH.
+				E, o conteudo do erro seja o que foi identificado no ERROR, que no exemplo esta "erro forçado".
+				
+. FINALLY
+	. também faz parte do fluxo TRY CATCH, mas é opcional
+	. este bloco, quando declarado é executado independente de como esteja o fluxo. Quer dizer, se soemnte o bloco TRY foi executado, logo em seguida o bloco FINALLY será executado. Se o bloco CATCH for executado, logo em seguida o FINALLY será executado.
+	. este boloco será executado de qualquer maneira.
+	sintaxe:
+				finally
+				{
+					<instruções>
+				}
+				
+	. exemplo:
+				try
+				{
+					let idade = 10;
+					
+					if (idade < 18)
+					{
+						throw new Error("erro forçado! Menor de idade");
+						document.write('Mauir de idade');
+					}	
+				}
+				catch(e)
+				{
+						document.write(e.message);				
+				}
+				finally
+				{
+						document.write('fim do processamento');								
+				}

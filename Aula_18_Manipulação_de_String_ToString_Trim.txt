@@ -1,0 +1,38 @@
+Aula 18 - Manipulação de String - ToString, Trim
+=======
+
+. TOSTRING
+
+	. é uma função que converte o conteudo de uma variavel em string.
+	sintaxe:
+				<variavel>.toString();
+	execplo:
+				let num = 15;
+				let a = num.toString();
+				
+				document.write(a);
+				
+	. esta função pode também receber parametros (opcional)
+	. os valores que esta função recebe como parametros são:
+		- 2, faz com que a função retorne o conteudo em forma de base binaria
+		- 8, faz com que a função retorne o conteudo em forma de base octadecimal
+		- 16, faz com que a função retorne o conteudo em forma de base hexadecimal
+	sintaxe:
+				<variavel>.toString(<opcional>);
+
+	execplo:
+				let num = 15;
+				let bin = num.toString(2); // retorna o valor 15 em forma binaria
+				let oct = num.toString(8); // retorna o valor 15 em forma octa
+				let hex = num.toString(16);	// retorna o valor 15 em forma hexadecimal
+				
+				
+. TRIM
+
+	. esta função retira os espaos do inicio e do fim de uma string;
+	sintaxe:
+				<variavel>.trim();
+				
+				
+proxima aula : Curso de Javascript #51 - Jogo da Velha - P1
+	

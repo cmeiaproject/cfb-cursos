@@ -1,0 +1,40 @@
+Aula 12 - Animation Frame
+=======
+
+. REQUESTANINAMTIONFRAME
+
+	. é uma funcionalidade javascript similar ao setInterval. 
+	. pertencente a classe window
+	. a diferença desta função para setInterval, é que ela só recebe a função que será executada, e não precisa mais definir o tempo
+	. a definição do tempo é definida pelo browser, pois é o browser que estará gerenciando e verificando qual o tempo necessário para que seja executando a função chamada.
+	sintaxe:
+				requestAnimationFrame(<funcao>);
+	exemplo:
+				let a = requestAnimationFrame(myFunc);
+	
+	. outra diferença desta função para o setInterval, é que o setInterval como tem definido o tempo, ele chama a função a cada X tempo (o tempo que foi definido na função), enquanto que a função requestAnimationFrame precisa que ela seja chamada N vezes, pois senão, será executada somente uma vez.
+	exemplo 1:
+				let a = requestAnimationFrame(myFunc);
+				// desta forma a função chamada pelo requestAnimationFrame será executada somente uma vez.
+				
+	exemplo 2:
+				myFunc();
+				
+				function myFunc()
+				{
+					a = requestAnimationFrame(myFunc);
+				}
+				// com o uso da recursividade o requestAnimationFrame pode chamar a função quantas vezes for necessário
+				
+				
+. CANCELANINAMTIONFRAME				
+
+	. esta função é usada para cancelar a execução do requestAnimationFrame
+	sintaxe:
+			cancelAnimationFrame(<variavel>);
+			
+	exemplo:
+			let a = requestAnimationFrame(myFunc);
+			cancelAnimationFrame(a);
+			
+proxima aula: Curso de Javascript #44 - Modernizando o Slider			

@@ -1,0 +1,64 @@
+Aula 10 - Carregando eventos antes dos elementos serem renderizados
+=======
+
+. Existem varias maneiras de associar um evento a um elemento html.
+	1. Inserir a tag <script></script> dentro do conteudo do <body>.
+	   Desta forma deixa o código javascript misturado com html	
+		exemplo:
+					<body>
+						<div id="box"></div>
+						
+						<script>
+							const id = document.getElementById("box");
+							id.addEventListener("click", function()
+														 {
+															alert("Ola");
+														 }
+											   );
+						</script>
+					</body>
+					
+	2. Inserir a tag <script></script> antes de carregar o conteudo do <body>.
+	   Desta forma o código javascript fica separado (a maior parte) do html, 
+	   mas ainda tem codigo javascript sendo referenciado no html, o uso do evento "onclick".	
+		exemplo:
+					<script>
+						function Msg()
+						{
+							alert("Ola");
+						}
+					</script>
+		
+					<body>
+						<div id="box" onclick="Msg()"></div>
+					</body>					
+					
+	3. Inserir a tag <script></script> antes de carregar o conteudo do <body>.
+	   Desta forma o código javascript fica totalmente separado.  
+		exemplo:
+					<script>
+						const box = document.getElementById("box");
+						
+						function Msg()
+						{
+							alert("Ola");
+						}
+						
+						function addEventos()
+						{
+							box.addEventListener("click", Msg);
+						}
+						
+						window.addEventListener("load", addEventos);
+						// neste caso para que ao usar o evento "load", a função "addEventos"
+						// fosse carregada, foi necessario "escutar" os eventos pela classe WINDOW.
+						// Se usasse a classe DOCUMENT, ao executar o "load", não daria certo.
+						// a classe WINDOW espera que todos os elementos da pagina sejam carregados
+						// já a classe DOCUMENT é inicialiazada quando a DOM esta pronta ou carregada.
+						// Neste caso, o DOCUMENT não estaria esperando que os seletores html fossem todos carregados
+						
+					</script>
+		
+					<body>
+						<div id="box"></div>
+					</body>										

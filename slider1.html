@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Slider</title>
+	</head>	
+	<style>
+		#slider
+		{
+			position: absolute;
+			top: 150px;
+			height: 250px;
+			width: 800px;
+			border: 1px solid black;
+		}
+	</style>
+	<script>
+		let slider;
+		let imgs;
+		let subtitulos;
+		let maximoImg;
+		let atualImg;
+		let h2;
+	
+		function carregarImagens()
+		{
+			let a = 1;
+			imgs = new Array;
+			subtitulos = new Array;
+			for(let i=0; i<4; i++)
+			{
+				imgs[i] = new Image;
+				imgs[i].src = "img/img" +a+ ".jpg";
+				subtitulos[i] = "img/img" +a+ ".jpg";
+				
+				a++;
+			}
+		}
+		
+		function mudarImagem()
+		{
+			atualImg++;
+			if( atualImg > maximoImg )
+			{
+				atualImg = 0;
+			}
+			exibirImagem(atualImg);
+		}
+	
+		function iniciar()
+		{
+			slider = document.getElementById("slider");
+			h2 = document.getElementById("subtitulo");			
+			carregarImagens();			
+			
+			maximoImg = imgs.length - 1;
+			atualImg = 0;
+			exibirImagem(atualImg);
+			
+			setInterval(mudarImagem, 2000);
+		}
+	
+		function exibirImagem(index)
+		{
+			h2.innerHTML = subtitulos[index];
+			slider.style.backgroundImage = "url(" +imgs[index].src+ ")";
+		}
+	
+		window.addEventListener("load", iniciar);
+	
+	</script>
+	<body>
+		<h1>Slider 1</h1>
+		<h2 id="subtitulo"><h2>
+		<div id="slider"></div>
+	</body>	
+</html>

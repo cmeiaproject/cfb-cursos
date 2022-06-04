@@ -1,0 +1,22 @@
+Aula 4 - Arrays MultiDimensionais
+======
+
+	. o javascript permite criar arrays multidimensionais.
+	exemplo 1:
+				let cores = [];
+				let primaria = ["azul", "amarelo", "vermelho"];
+				let secundaria = ["verde", "preto", "bege"];				
+				
+				cores.push(primaria);
+				cores.push(secundaria);
+				
+				let cor = cores[0][1]; // amarelo
+				cor = cores[1][2]; // bege
+				
+	exemplo 2:
+				let cores = [["azul", "amarelo", "vermelho"], ["verde", "preto", "bege"]];
+				
+				let cor = cores[0][1]; // amarelo
+				cor = cores[1][2]; // bege
+				
+proxima aula: Curso de Javascript #19 - Comando de Loop WHILE

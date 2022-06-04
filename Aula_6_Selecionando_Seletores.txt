@@ -1,0 +1,30 @@
+Aila 6 - Selecionando Seletores
+======
+
+. QUERYSELECTORALL
+	. é um método javascript que seleciona todos os elementos da pagina, seja tags, classes ou id
+	sintaxe:
+			document.querySelectorAll("<conteudo>");
+	
+	exemplo:
+			const elementos = document.querySelectorAll("p");
+			- a instrução acima, ira trazer todos as tags <p> que existirem na pagina.
+			
+			const elementos = document.querySelectorAll(".borda");
+			- a instrução acima, ira trazer todos os elementos que estejam associados a classe "borda" que existirem na pagina.
+			
+			const elementos = document.querySelectorAll("p.borda");
+			- a instrução acima, ira trazer todos os elementos, cuja tag <p> que existirem na pagina, que estejam associadas a classe "borda" 
+			
+			const elementos = document.querySelectorAll("div > p");			
+			- a instrução acima, ira trazer todos as tags <p> que sejam filhas de uma tag <div>
+			
+			const elementos = document.querySelectorAll("div > *");			
+			- a instrução acima, ira trazer todos as tags que sejam filhas de uma tag <div>
+			
+			const elementos = document.querySelectorAll("div.borda > *");			
+			- a instrução acima, ira trazer todos as tags que sejam filhas de uma tag <div>, e que esta tag <div> esteja associada a classe borda
+			
+			const elementos = document.querySelectorAll("p, h1, h3");			
+			- a instrução acima, ira trazer somente as tags <p>, <h1>, <h3> que existirem na pagina
+			

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Animation Frame</title>
+		<style>
+			#jogador
+			{
+				position: absolute;
+				height: 50px;
+				width: 50px;
+				background-color: blue;
+				left: 0px;
+				top: 150px;
+			}
+		</style>
+		<script>
+		
+			let dx, dy;
+			let px, py;
+			let v;
+			let anima;
+			let flag;
+			let jogador;
+			let btnIniciar;
+			let btnParar;
+			let t;
+
+			function MudarCor()
+			{
+				t = setInterval(() => {
+									let r, g, b;
+									
+									r = Math.random() * 255;
+									g = Math.random() * 255;
+									b = Math.random() * 255;
+									jogador.style.backgroundColor = "rgb(" +r+ "," +g+ "," +b+ ")"; 
+								  }, 200);
+			
+			}
+			
+			function movimenta()
+			{
+				if (this.id == 'jogador')
+				{
+					flag = flag == 'N' ? 'S' : 'N';
+				}
+				else if (this.id == 'btnIniciar')
+				{
+					flag = 'S';
+				}				
+				else
+				{
+					flag = 'N';				
+				}
+				
+				if( flag == 'S' )
+				{
+					MudarCor();				
+					game();
+				}
+				else
+				{
+					cancelAnimationFrame(anima);
+					clearInterval(t);
+					jogador.style.backgroundColor = blue;
+				}
+			}
+			
+			function iniciar()
+			{
+				dx = 1;
+				dy = 0;
+				px = 0;
+				py = 150;
+				flag = 'N';
+				v = 2;
+				jogador = document.getElementById("jogador");
+				btnIniciar = document.getElementById("btnIniciar");
+				btnParar = document.getElementById("btnParar");				
+				
+				jogador.addEventListener("click", movimenta);
+				btnIniciar.addEventListener("click", movimenta);
+				btnParar.addEventListener("click", movimenta);	
+				
+			}
+			
+			function game()
+			{
+				px += (dx * v);
+				
+				if (px > 800)
+				{
+					dx = -1;
+				}
+				else if (px < 0)
+				{
+					dx = 1;
+				}
+				
+				jogador.style.left = px + 'px';
+				
+				anima = requestAnimationFrame(game);
+			}
+			
+			window.addEventListener("load", iniciar);
+		
+		</script>
+	</head>
+	<body>
+		<h1>Desafio Animation Frame</h1>
+		<div>
+			<button id="btnIniciar">Iniciar</button>
+			<button id="btnParar">Parar</button>			
+		</div>		
+		<div id="jogador"></div>
+	</body>
+	
+</html>

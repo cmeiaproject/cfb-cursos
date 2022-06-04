@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8>"/>
+		<title>Jogo da Forca</title>
+		<script src="./js/scriptJS.js"></script>
+		<style>
+			#tronco, #inferiores
+			{
+				height: 37px;
+			}
+			
+			#head
+			{
+				display: none;
+			}
+			
+			#superior-esq, #central, #superior-dir
+			{
+				float: left;
+				width: 30%;
+				display: none;
+			}
+			
+			#inferior-dir
+			{
+				display: none;			
+			}			
+			
+			#inferior-esq
+			{
+				float: left;
+				display: none;			
+			}
+			
+			h1
+			{
+				text-align: center;
+				margin: auto;
+			}
+			
+			h2
+			{
+				margin-top: 5px;
+			}
+			
+			h3
+			{
+				text-align: center;
+				margin: auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1>Jogo da Forca</h1>
+		<p id="p1"></p>
+		
+		<button id="btnIniciar">iniciar Jogo</button>
+		<button id="btnNovaLetra" disabled>Letra</button>	
+
+		<button id="btnPernaEsquerda" disabled>Perna Esquerda</button>	
+		<button id="btnPernaDireita" disabled>Perna Direita</button>			
+		
+		
+		<div id="main">
+			<div id="head"><h1>CABEÇA</h1></div>
+			<div id="tronco">
+				<div id="superior-esq"><h1>BRAÇO ESQUERDO</h1></div>
+				<div id="central"><h1>TRONCO</h1></div>				
+				<div id="superior-dir"><h1>BRAÇO DIREITO</h1></div>								
+			</div>
+			<div id="inferiores">
+				<div id="inferior-esq"><h1>PERNA ESQUERDA</h1></div>
+				<div id="inferior-dir"><h1>PERNA DIREITA</h1></div>				
+			</div>			
+		</div>
+		
+		
+		<h2>Acertos</h2>
+		<h3 id="acertos"></h3>
+		<h2>Erros</h2>		
+		<h3 id="erros"></h3>		
+		
+		<p id="resultado"></p>
+	</body>
+</html>
